@@ -1,0 +1,17 @@
+.full-question{max-height:none!important;overflow:visible!important;background:#fcfbf7;border:1px solid #e1e5df;border-radius:10px;padding:15px;margin:2px 0 14px;white-space:pre-wrap}
+.answer-line{margin:8px 0 16px}
+.option-heading{font:600 17px Georgia,'Noto Serif TC','Songti TC',serif;color:#245b5c;margin:18px 0 9px}
+.option-list{display:grid;grid-template-columns:1fr;gap:9px}
+.option-analysis{border:1px solid #d9e0dc;border-radius:10px;padding:12px 14px;background:#fff}
+.option-analysis.is-right{border-left:4px solid #278477;background:#f2f8f5}
+.option-analysis.is-wrong{border-left:4px solid #c78658;background:#fffaf5}
+.option-analysis.is-unknown{border-left:4px solid #89959a;background:#f5f6f6}
+.option-top{display:flex;align-items:center;gap:9px;font-size:13px}
+.option-top b{font:700 15px Georgia,'Noto Serif TC','Songti TC',serif;color:#146f70}
+.option-top span{font-size:10px;border-radius:99px;background:#e9efeb;padding:3px 8px;color:#46615c}
+.option-statement{font-size:13px;margin:8px 0;color:#2e4045;white-space:pre-wrap}
+.option-why{font-size:12px;margin:0;color:#59686c;white-space:pre-wrap}
+.source-line{font-size:10px;color:#63757c;margin:15px 0 0}
+.source-exp{margin-top:12px;border-top:1px solid #d9e0dc;padding-top:10px}
+.source-exp summary{font-size:11px;color:#146f70;cursor:pointer}
+.source-exp pre{white-space:pre-wrap;font:12px/1.7 'Noto Sans TC','Microsoft JhengHei',system-ui,sans-serif;color:#63757c}
