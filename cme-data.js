@@ -4,7 +4,7 @@ window.CME_COURSES=[
   year:114,date:'2025-06-15',title:'114CME',paperCount:9,
   theme:'囤積、強迫症與晚年失智：從行為表現到鑑別與治療',
   programme:'114年CME課程節目表(2025-05-05) XP.jpg',
-  sourceNote:'依節目表六場文獻導讀的九篇文章整理。此資料夾未附文章PDF，逐篇補查原始期刊、PubMed或作者典藏；取得範圍在各篇標明。另列的兩場個案報告不收錄。導讀1的第二篇本身是病例型文獻，仍依節目表收錄並明示其證據層級。',
+  sourceNote:'依節目表六場文獻導讀的九篇文章整理，已納入新補充的七份原始PDF。其餘兩篇目前仍以原始期刊摘要核實，全文缺口逐篇標明。另列的兩場個案報告不收錄；導讀1的第二篇本身是指定病例研究，保留並明示證據限制。',
   foundations:[
    ['常見縮寫先認識','AD是阿茲海默症；bvFTD是以行為、人格與社會功能改變為主的額顳葉失智症。FTLD指額顳葉退化的病理大類，不能與某一臨床表型完全畫等號；svPPA是語意型原發性進行性失語症，FTD-ALS則合併肌萎縮性側索硬化症表現。'],
    ['先分清「強迫」與「重複行為」','OCD的強迫思考通常是侵入、不想要且造成焦慮，強迫行為用來降低不安。神經退化的刻板行為則可能缺少清楚的侵入思考與抵抗感。兩者可重疊，應問起病年齡、本人痛苦、病識感與功能變化。'],
@@ -71,14 +71,15 @@ window.CME_PAPERS=[
   id:'114-1b',year:114,title:'晚發OCD可能早於行為型AD：單一病例的警訊',
   original:"Late-onset obsessive-compulsive disorder as the initial manifestation of possible behavioural variant Alzheimer's disease",
   citation:'Ruggeri等，2022（2021年線上），Cogn Neuropsychiatry 27(1):11–19',doi:'10.1080/13546805.2021.1996342',
-  level:'原始文獻摘要核對；單一病例',design:'一名原本認知正常的年長女性，以亞急性污染意念與清洗強迫起病，接受神經心理及影像評估，追蹤3年。',
+  level:'指定PDF全文與Table 1核對；單一病例',design:'78歲女性，以亞急性污染意念與清洗強迫起病。初始MMSE 29分，但部分神經心理作業已異常；內文描述發作後3年進展，原表／SPECT標示兩年追蹤。',
+  file:"1-2. Late-onset obsessive-compulsive disorder as the initial manifestation of possible behavioural variant Alzheimer's disease.pdf",pages:'第3–7頁；Table 1第5頁、Fig. 1第6頁',
   question:'看似典型OCD的症狀，是否可能是神經退化很早期的表現？',
   findings:[
    '3年後出現認知下降與額葉行為改變，OCD反而改善；缺損涉及執行、情節記憶及建構能力。',
    '影像涉及額葉內側、顳葉與頂葉；作者給予possible behavioural variant AD的臨床診斷。'
   ],
   interpretation:'OCD症狀減輕不一定代表整體康復，若同時失去功能與出現新行為變化，應重看病程。',
-  limits:'只能提示可能性；摘要的possible臨床診斷不能當作病理證實，也不能由一例估算轉變率或認定所有晚發OCD都是AD。',
+  limits:'單一病例只能提示可能性；未做CSF或病理確認，possible臨床診斷不能當作生物標記證實，也不能由一例估算所有晚發OCD的轉變率。',
   exams:[
    ['鑑別不只bvFTD','晚發強迫表現亦可見於行為型AD，需整合記憶、其他認知領域與影像。'],
    ['假性改善','強迫減少若伴整體退化，不宜只解讀為治療成功。'],
@@ -90,7 +91,8 @@ window.CME_PAPERS=[
   id:'114-2a',year:114,title:'bvFTD與原發精神疾病：有步驟的鑑別',
   original:'Recommendations to distinguish behavioural variant frontotemporal dementia from psychiatric disorders',
   citation:'Ducharme等，2020，Brain 143(6):1632–1650',doi:'10.1093/brain/awaa018',
-  level:'原文全文核對',design:'國際團隊的證據回顧與專家共識；建議需達至少85%同意，不是單一診斷試驗。',
+  level:'指定PDF全文與Box 1–7核對',design:'國際團隊的證據回顧與專家共識；建議需達至少85%同意，不是單一診斷試驗。',
+  file:'2. Recommendations to distinguish behavioural variant frontotemporal dementia from psychiatric disorders..pdf',pages:'全文19頁；Box 1–7',
   question:'成人新發的人格、情感或強迫行為改變，怎麼分辨bvFTD與精神疾病？',
   findings:[
    '評估不能只靠MMSE或MoCA總分；建議神經心理組合至少加入一項正式社會認知測驗。',
@@ -110,7 +112,8 @@ window.CME_PAPERS=[
   id:'114-2b',year:114,title:'過度口慾不只出現在bvFTD：表型、進程與右側網路',
   original:'Clinical and imaging correlates of hyperorality in syndromes associated with frontotemporal lobar degeneration',
   citation:'Altomare等，2024，Psychiatry Clin Neurosci 78(12):818–825',doi:'10.1111/pcn.13751',
-  level:'原文全文核對',design:'回溯縱向研究；712名FTLD相關症候群患者，以FBI照顧者題項評估；331人有追蹤。',
+  level:'指定PDF全文、表1–2及圖1–3核對',design:'回溯縱向研究；712名FTLD相關症候群患者，以FBI照顧者題項評估；331人有追蹤。',
+  file:'2-2. Clinical and imaging correlates of hyperorality in syndromes associated with frontotemporal lobar degeneration..pdf',pages:'全文8頁；Table 1–2、Fig. 1–3',
   question:'哪些FTLD表型較易過度吃喝、偏甜食或把非食物放入口中，與哪些影像變化相關？',
   findings:[
    '204／712人（29%）有過度口慾；bvFTD與FTD-ALS較常見，疾病較嚴重者較多。',
@@ -129,7 +132,8 @@ window.CME_PAPERS=[
   id:'114-3',year:114,title:'神經疾病的性慾亢進：藥物、失控與評估異質性',
   original:'Hypersexuality in neurological disorders: A systematic review',
   citation:'Tayim、Barbosa、Panicker，2024，BMJ Ment Health 27:e300998',doi:'10.1136/bmjment-2024-300998',
-  level:'原文全文核對；採節目表所列2024年版本',design:'系統性回顧79項研究、81個分析群組，共32,662名神經疾病患者；不是32,662名性慾亢進個案。',
+  level:'指定PDF全文核對；採2024年版本',design:'系統性回顧79項研究、81個分析群組，共32,662名神經疾病患者；不是32,662名性慾亢進個案。',
+  file:'3. Hypersexuality in neurological disorders A systematic review.pdf',pages:'全文9頁；補充研究清單未另提供',
   question:'神經疾病相關性行為失控，哪些機轉與治療證據較一致？',
   findings:[
    '研究以PD最常見，評估工具與定義差異大，無法用一個比例代表各神經疾病的盛行率。',
@@ -148,7 +152,8 @@ window.CME_PAPERS=[
   id:'114-4a',year:114,title:'家訪中的嚴重囤積：不到一半符合囤積症',
   original:'Hoarding behaviour: special features and complications in real-world clinical practice',
   citation:'Córcoles等，2024（2023年線上），Int J Psychiatry Clin Pract 28(1):17–26',doi:'10.1080/13651501.2023.2287755',
-  level:'原始研究摘要核對',design:'巴塞隆納2013–2020年家訪方案；Clutter Image Rating ≥4的243名臨床個案，比較有無DSM-5囤積症。',
+  level:'指定PDF全文與Table 1–5核對',design:'巴塞隆納2013–2020年家訪方案；Clutter Image Rating ≥4的243名臨床個案，比較有無DSM-5囤積症。',
+  file:'4. Hoarding behaviour special features and complications in real-world clinical practice.pdf',pages:'全文11頁；Table 1–5',
   question:'家裡嚴重堆積的病人，是否都應診斷囤積症？',
   findings:[
    '只有117人（48.1%）符合囤積症；囤積行為中位持續10年，早期常未被察覺。',
@@ -167,11 +172,12 @@ window.CME_PAPERS=[
   id:'114-4b',year:114,title:'囤積與憂鬱常共病，卻不一定同步變化',
   original:'Relationship of Hoarding and Depression Symptoms in Older Adults',
   citation:'Nutley等，2024，Am J Geriatr Psychiatry 32(4):497–508',doi:'10.1016/j.jagp.2023.11.006',
-  level:'原始研究摘要核對',design:'兩個縱向樣本：晚年憂鬱73人、終生MDD病史580人；以SI-R／HRS及憂鬱量表追蹤。',
+  level:'指定PDF全文、Table 1與Figure 4核對',design:'兩個縱向樣本：晚年憂鬱73人、終生MDD病史580人；以SI-R／HRS及憂鬱量表追蹤。',
+  file:'4-2. Relationship of Hoarding and Depression Symptoms in Older Adults.pdf',pages:'全文18頁；Table 1及Figure 1–4',
   question:'老年憂鬱者的囤積是否常見，會隨憂鬱改善而自行消失嗎？',
   findings:[
-   'MDD樣本中囤積症約12%～33%，有當前憂鬱症狀者較高；囤積嚴重度跨時點相關皆大於0.75。',
-   '各樣本不到30%出現顯著嚴重度變化；憂鬱變化未與囤積變化共同變動。'
+   '臨床晚年憂鬱21／73人、線上終生MDD 75／580人達囤積切點；臨床囤積跨時點r=0.73–0.91，線上連續時點r=0.75–0.83。',
+   '人際相關與同時點個人內共變存在，但未見雙向跨時點預測；憂鬱改善不保證囤積相應改善。'
   ],
   interpretation:'同時具有兩種症狀，並不表示兩者會一起改善；治療憂鬱仍應另外評估囤積與居住功能。',
   limits:'特定臨床及登錄樣本與自陳量表，不能直接外推所有老年人；沒有證明兩種疾病在任何情境都互不影響。',
@@ -186,7 +192,8 @@ window.CME_PAPERS=[
   id:'114-5',year:114,title:'囤積症CBT：大幅組內改善仍需對照試驗',
   original:'Cognitive behavioral therapy for hoarding disorder: An updated meta-analysis',
   citation:'Rodgers、McDonald、Wootton，2021，J Affect Disord 290:128–135',doi:'10.1016/j.jad.2021.04.067',
-  level:'作者典藏接受稿；摘要與方法核對',design:'16項研究、505人，平均56歲；因受控試驗不足，只統合治療組的前後變化。',
+  level:'指定PDF全文與Table 1–3核對',design:'16項研究、505人，平均56歲；因受控試驗不足，只統合治療組的前後變化。',
+  file:'5. Cognitive behavioral therapy for hoarding disorder An updated meta-analysis.pdf',pages:'全文8頁；Table 1–3',
   question:'CBT後囤積改善多少，效果能否維持，憂鬱是否也改善？',
   findings:[
    '囤積症狀治療前至治療後g=1.11（95% CI 0.92–1.29），至追蹤g=1.25（0.94–1.56）；憂鬱改善g=0.45（0.28–0.61）。',
