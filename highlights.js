@@ -15,8 +15,8 @@
    return value.highlights.filter(item=>typeof item.id==='string'&&/^[\w-]+$/.test(item.id)&&Array.isArray(item.segments)).map(item=>({...item,segments:item.segments.filter(s=>typeof s.key==='string'&&typeof s.quote==='string'&&Number.isInteger(s.start)&&Number.isInteger(s.end)&&s.start>=0&&s.end>s.start)}));
   }catch{return [];}
  }
- function persist(){
-  try{localStorage.setItem(STORAGE_KEY,JSON.stringify({version:1,highlights}));return true;}
+ function persist(notify=true){
+  try{localStorage.setItem(STORAGE_KEY,JSON.stringify({version:1,highlights}));if(notify)window.dispatchEvent(new CustomEvent('study-highlights-changed'));return true;}
   catch{return false;}
  }
  function hash(text){let value=2166136261;for(let i=0;i<text.length;i++)value=Math.imul(value^text.charCodeAt(i),16777619);return (value>>>0).toString(36)+'-'+text.length;}
@@ -110,7 +110,7 @@
  }
  function showToolbar(rect){
   addButton.disabled=!pending.length;removeButton.disabled=!clickedIds.length&&!intersectingIds(pending).length;
-  hint.textContent=pending.length||clickedIds.length?'標記保存在目前裝置的此瀏覽器；點標記可移除。':'先拖曳選取內容；手機可長按選取，再按「螢光標記」。標記保存在此瀏覽器。';
+  hint.textContent=pending.length||clickedIds.length?(window.StudyCloudSync?'標記會自動同步到此登入帳號；點標記可移除。':'標記保存在目前裝置的此瀏覽器；點標記可移除。'):'先拖曳選取內容；手機可長按選取，再按「螢光標記」。';
   toolbar.hidden=false;launcher.setAttribute('aria-expanded','true');
   const width=toolbar.offsetWidth,height=toolbar.offsetHeight;
   toolbar.style.left=Math.max(10,Math.min(rect.left,window.innerWidth-width-10))+'px';
@@ -126,7 +126,7 @@
  function scheduleSelection(){clearTimeout(selectionTimer);selectionTimer=setTimeout(showSelection,180);}
  function finish(message){
   suppressSelection=true;clearTimeout(selectionTimer);window.getSelection()?.removeAllRanges();pending=[];clickedIds=[];savedRange=null;hideToolbar();refresh();
-  const stored=persist();announce(stored?message+'（已儲存在此瀏覽器）':message+'；瀏覽器未允許儲存，重新載入後可能消失。');
+  const stored=persist();announce(stored?message+(window.StudyCloudSync?'（已存於此裝置，準備雲端同步）':'（已儲存在此瀏覽器）'):message+'；瀏覽器未允許儲存，重新載入後可能消失。');
   setTimeout(()=>{suppressSelection=false;},0);
  }
  toolbar.addEventListener('pointerdown',event=>event.preventDefault());
@@ -158,5 +158,15 @@
  window.addEventListener('resize',hideToolbar);
  window.addEventListener('scroll',hideToolbar,{passive:true});
  window.addEventListener('storage',event=>{if(event.key===STORAGE_KEY){highlights=readStorage();hideToolbar();refresh();}});
+ window.StudyHighlights={
+  get:()=>JSON.parse(JSON.stringify(highlights)),
+  apply(items){
+   if(!window.StudySyncModel)return false;
+   let next;try{next=window.StudySyncModel.parse({version:1,highlights:items});}catch{return false;}
+   const previous=highlights;highlights=next;
+   if(!persist(false)){highlights=previous;return false;}
+   hideToolbar();refresh();return true;
+  }
+ };
  refresh();
 })();
