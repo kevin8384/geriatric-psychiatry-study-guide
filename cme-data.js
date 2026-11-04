@@ -4,7 +4,7 @@ window.CME_COURSES=[
   year:114,date:'2025-06-15',title:'114CME',paperCount:9,
   theme:'囤積、強迫症與晚年失智：從行為表現到鑑別與治療',
   programme:'114年CME課程節目表(2025-05-05) XP.jpg',
-  sourceNote:'依節目表六場文獻導讀的九篇文章整理，已納入新補充的七份原始PDF。其餘兩篇目前仍以原始期刊摘要核實，全文缺口逐篇標明。另列的兩場個案報告不收錄；導讀1的第二篇本身是指定病例研究，保留並明示證據限制。',
+  sourceNote:'依六場文獻導讀的九篇指定 PDF 全文整理，已補齊 OCD 與失智風險世代研究及囤積症認知系統性回顧。導讀 1 的第二篇是單一病例研究，證據範圍見該篇說明。',
   foundations:[
    ['常見縮寫先認識','AD是阿茲海默症；bvFTD是以行為、人格與社會功能改變為主的額顳葉失智症。FTLD指額顳葉退化的病理大類，不能與某一臨床表型完全畫等號；svPPA是語意型原發性進行性失語症，FTD-ALS則合併肌萎縮性側索硬化症表現。'],
    ['先分清「強迫」與「重複行為」','OCD的強迫思考通常是侵入、不想要且造成焦慮，強迫行為用來降低不安。神經退化的刻板行為則可能缺少清楚的侵入思考與抵抗感。兩者可重疊，應問起病年齡、本人痛苦、病識感與功能變化。'],
@@ -52,11 +52,12 @@ window.CME_PAPERS=[
   id:'114-1a',year:114,title:'OCD患者的失智風險：臺灣全國世代研究',
   original:'Obsessive-Compulsive Disorder and Dementia Risk: A Nationwide Longitudinal Study',
   citation:'Chen等，2021，J Clin Psychiatry 82(3):20m13644',doi:'10.4088/JCP.20m13644',
-  level:'原始研究摘要核對',design:'臺灣健保資料庫縱向世代；≥45歲OCD患者1,347人，配對對照13,470人，資料期間1996–2013年。',
+  level:'指定PDF全文、Figure 1 與 Tables 1–3 核對',design:'臺灣健保資料庫縱向世代，≥45歲OCD患者1,347人與配對對照13,470人，資料期間1996–2013年。',
+  file:'1-1. Obsessive-Compulsive Disorder and Dementia Risk A Nationwide Longitudinal Study.pdf',pages:'全文6頁，Table 1 在第3頁，Figure 1 與 Tables 2–3 在第4頁',
   question:'OCD是否與日後被診斷失智有關，而不只是幾則個案的巧合？',
   findings:[
    '相較配對對照，OCD組全因失智HR 4.28（95% CI 2.96–6.21）；AD為4.04（1.55–10.54），血管性失智為3.95（1.70–9.18）。',
-   '結果支持把OCD視為需要追蹤認知的風險訊號，但沒有證明OCD直接造成AD或血管性失智。'
+   '將前3年、前5年的失智事件作截尾處理後，全因失智HR分別為3.97及3.04。結果仍有關聯，但觀察性設計無法確立因果。'
   ],
   interpretation:'資料庫的診斷先後不等於生物病因先後；部分精神症狀可能已是尚未辨識的退化前驅。',
   limits:'觀察性、依診斷碼辨識，仍可能有殘餘混雜與就醫偵測差異；不是治療OCD可預防失智的試驗。',
@@ -65,7 +66,7 @@ window.CME_PAPERS=[
    ['病因範圍','關聯同時見於全因、AD與血管性失智，不能只記成AD專屬。'],
    ['推論限制','配對可改善可比性，不能完全消除混雜或反向因果。']
   ],
-  sources:[{title:'原始研究摘要與書目',url:'https://pubmed.ncbi.nlm.nih.gov/34004091/'}]
+  sources:[{title:'期刊原文與圖表',url:'https://doi.org/10.4088/JCP.20m13644'}]
  },
  {
   id:'114-1b',year:114,title:'晚發OCD可能早於行為型AD：單一病例的警訊',
@@ -92,7 +93,8 @@ window.CME_PAPERS=[
   original:'Recommendations to distinguish behavioural variant frontotemporal dementia from psychiatric disorders',
   citation:'Ducharme等，2020，Brain 143(6):1632–1650',doi:'10.1093/brain/awaa018',
   level:'指定PDF全文與Box 1–7核對',design:'國際團隊的證據回顧與專家共識；建議需達至少85%同意，不是單一診斷試驗。',
-  file:'2. Recommendations to distinguish behavioural variant frontotemporal dementia from psychiatric disorders..pdf',pages:'全文19頁；Box 1–7',
+  file:'2. Recommendations to distinguish behavioural variant frontotemporal dementia from psychiatric disorders..pdf',pages:'全文19頁，Box 1–7 在第5–12頁，Figure 1 在第13頁',
+  visualScope:'本篇涵蓋主文 Box 1–7 與 Figure 1。期刊另附補充圖表，本次以取得的主文 PDF 為範圍。',
   question:'成人新發的人格、情感或強迫行為改變，怎麼分辨bvFTD與精神疾病？',
   findings:[
    '評估不能只靠MMSE或MoCA總分；建議神經心理組合至少加入一項正式社會認知測驗。',
@@ -134,6 +136,7 @@ window.CME_PAPERS=[
   citation:'Tayim、Barbosa、Panicker，2024，BMJ Ment Health 27:e300998',doi:'10.1136/bmjment-2024-300998',
   level:'指定PDF全文核對；採2024年版本',design:'系統性回顧79項研究、81個分析群組，共32,662名神經疾病患者；不是32,662名性慾亢進個案。',
   file:'3. Hypersexuality in neurological disorders A systematic review.pdf',pages:'全文9頁；補充研究清單未另提供',
+  visualScope:'本篇涵蓋主文 Figure 1–5。原文另引補充附件，本次以取得的主文 PDF 為範圍。',
   question:'神經疾病相關性行為失控，哪些機轉與治療證據較一致？',
   findings:[
    '研究以PD最常見，評估工具與定義差異大，無法用一個比例代表各神經疾病的盛行率。',
@@ -174,6 +177,7 @@ window.CME_PAPERS=[
   citation:'Nutley等，2024，Am J Geriatr Psychiatry 32(4):497–508',doi:'10.1016/j.jagp.2023.11.006',
   level:'指定PDF全文、Table 1與Figure 4核對',design:'兩個縱向樣本：晚年憂鬱73人、終生MDD病史580人；以SI-R／HRS及憂鬱量表追蹤。',
   file:'4-2. Relationship of Hoarding and Depression Symptoms in Older Adults.pdf',pages:'全文18頁；Table 1及Figure 1–4',
+  visualScope:'本篇涵蓋主文 Figure 1–4 與 Table 1。原文另引補充圖表，本次以取得的主文 PDF 為範圍。',
   question:'老年憂鬱者的囤積是否常見，會隨憂鬱改善而自行消失嗎？',
   findings:[
    '臨床晚年憂鬱21／73人、線上終生MDD 75／580人達囤積切點；臨床囤積跨時點r=0.73–0.91，線上連續時點r=0.75–0.83。',
@@ -212,7 +216,8 @@ window.CME_PAPERS=[
   id:'114-6',year:114,title:'囤積症的認知：最一致的是分類能力，不是全面退化',
   original:'Cognitive impairment in hoarding disorder: a systematic review',
   citation:'Stumpf等，2023（2022年線上），CNS Spectr 28(3):300–312',doi:'10.1017/S1092852922000153',
-  level:'原始系統性回顧摘要核對',design:'22項病例對照研究，共1,757名41～72歲患者；納入研究品質評為fair。',
+  level:'指定PDF全文、Figure 1 與 Tables 1–2 核對',design:'納入22項病例對照研究，原文報告共1,757人，各研究平均年齡約41.7～71.5歲。',
+  file:'6. Cognitive impairment in hoarding disorder.pdf',pages:'全文13頁，Figure 1 在第3頁，Table 1 在第4頁，Table 2 在第5–9頁',
   question:'囤積症是否在注意、記憶與所有執行功能上都比對照差？',
   findings:[
    '回顧最一致的差異在分類能力，尤其完成分類時的信心。',
@@ -225,7 +230,7 @@ window.CME_PAPERS=[
    ['陰性結果','沒有一致組間差異不等於不存在個別缺損或已證實等效。'],
    ['研究設計','病例對照不能證明認知差異早於或造成囤積。']
   ],
-  sources:[{title:'指定回顧摘要與出版年',url:'https://pubmed.ncbi.nlm.nih.gov/35477853/'}]
+  sources:[{title:'期刊原文與圖表',url:'https://doi.org/10.1017/S1092852922000153'}]
  }
 ];
 window.CME_PAPERS.push(
@@ -266,7 +271,8 @@ window.CME_PAPERS.push(
   id:'115-2',year:115,title:'瑞典VLOSLP世代：失智診斷增加，但不是人人進展為AD',
   original:'Association between risk of dementia and very late-onset schizophrenia-like psychosis: a Swedish population-based cohort study',
   citation:'Stafford等，2023（2021年線上），Psychological Medicine 53:750–758',doi:'10.1017/S0033291721002099',
-  level:'指定PDF全文核對',file:'2.Association between risk of dementia and very late-onset schizophrenia-like psychosis a Swedish population-based cohort study..pdf',pages:'第1、3～7頁；敏感性分析見表2、3',
+  level:'指定PDF全文、Figure 1 與 Tables 1–3 核對',file:'2.Association between risk of dementia and very late-onset schizophrenia-like psychosis a Swedish population-based cohort study..pdf',pages:'Figure 1 與 Tables 1–3 在第4–6頁',
+  visualScope:'本篇的圖表摘要涵蓋指定 PDF 主文。原文另附線上補充表。',
   design:'瑞典登錄世代；15,409名VLOSLP與154,090名年齡／曆期配對者。研究暴露為60歲後首次非情感性精神病診斷，追蹤失智診斷。',
   question:'極晚發精神病與後續失智的關聯，在排除早期誤診及死亡競爭風險後是否仍存在？',
   findings:[
@@ -289,7 +295,8 @@ window.CME_PAPERS.push(
   id:'115-3',year:115,title:'VLOP後的DLB線索：先分清48人與12人的定義',
   original:'Characteristics associated with progression to probable dementia with Lewy bodies in a cohort with very late-onset psychosis',
   citation:'Gibson等，2024，Psychological Medicine 54:3479–3488',doi:'10.1017/S0033291724001922',
-  level:'指定PDF全文與摘要頁影像核對',file:'3.Characteristics associated with progression to probable dementia with Lewy bodies in a cohort with very late-onset psychosis.pdf',pages:'第1～4頁；結局定義見方法，預測模型見表2、3',
+  level:'指定PDF全文、Figures 1–3 與 Tables 1–3 核對',file:'3.Characteristics associated with progression to probable dementia with Lewy bodies in a cohort with very late-onset psychosis.pdf',pages:'主文圖表在第4–7頁',
+  visualScope:'本篇的圖表摘要涵蓋指定 PDF 主文。原文另附線上補充表。',
   design:'精神醫療電子病歷縱向研究；1,425名60歲後首次非情感性精神病患者，平均追蹤4.29年；排除起始前或6個月內已有失智者。',
   question:'哪些晚發精神病的特徵，指向日後具有DLB特徵的失智，而不只是泛指所有失智？',
   findings:[
@@ -312,7 +319,8 @@ window.CME_PAPERS.push(
   id:'115-4',year:115,title:'幻覺與妄想的內容，能提供哪些病理線索？',
   original:'Psychosis in neurodegenerative disease: differential patterns of hallucination and delusion symptoms',
   citation:'Naasan等，2021，Brain 144:999–1012',doi:'10.1093/brain/awaa413',
-  level:'指定PDF全文與摘要頁影像核對',file:'4.Psychosis in neurodegenerative disease.pdf',pages:'第1～3頁與第6～11頁；分組及症狀比較見表1～4',
+  level:'指定PDF全文、Figures 1–2 與 Tables 1–6 核對',file:'4.Psychosis in neurodegenerative disease.pdf',pages:'主文圖表在第5–6、8–11頁',
+  visualScope:'本篇的圖表摘要涵蓋指定 PDF 主文。原文另附病理分組與症狀細項的補充資料。',
   design:'372名解剖證實神經退化病理者的回溯病歷研究：AD 111人、LBD合併AD 59人、FTLD-tau 133人、FTLD-TDP 69人。共111人曾有精神病症狀。',
   question:'不同病理是否只有精神病發生比例不同，還是連幻覺／妄想內容也不同？',
   findings:[
@@ -335,7 +343,7 @@ window.CME_PAPERS.push(
   id:'115-5',year:115,title:'晚發精神病總覽：先排次發原因，再談原發精神病',
   original:'Overview of late-onset psychoses',
   citation:'Devanand等，2024（2023年線上），International Psychogeriatrics 36(1):28–42',doi:'10.1017/S1041610223000157',
-  level:'指定PDF全文核對',file:'5.Overview of late-onset psychoses.pdf',pages:'第1～4頁；鑑別、影像與各病因整理見表1及相關治療段落',
+  level:'指定PDF全文與Table 1 核對',file:'5.Overview of late-onset psychoses.pdf',pages:'Table 1 在第7–8頁，涵蓋各病因與鑑別特徵',
   design:'涵蓋流行病學、臨床、神經生物及治療的敘述性回顧；檢索PubMed、MEDLINE及Cochrane，但不是新收案研究。',
   question:'年長者第一次出現精神病症狀，應如何建立完整而可操作的鑑別？',
   findings:[

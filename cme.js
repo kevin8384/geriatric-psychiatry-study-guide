@@ -7,10 +7,45 @@
  const paperMap=new Map(papers.map(p=>[p.id,p]));
  const notes=window.CME_DEEP_NOTES||[];
  const noteMap=new Map(notes.map(p=>[p.id,p]));
+ const visuals=window.CME_VISUAL_NOTES||{};
  const e=window.esc;
  const safeLink=(url,title)=>/^https:\/\//.test(url)?`<a href="${e(url)}" target="_blank" rel="noopener noreferrer">${e(title)} ↗</a>`:e(title);
  const paragraph=text=>`<p>${e(text)}</p>`;
  const section=(title,text)=>`<section class="cme-block"><h4>${e(title)}</h4>${paragraph(text)}</section>`;
+
+ function visualSection(p){
+  const entries=visuals[p.id]||[];
+  if(!entries.length)return '';
+  const source=`https://doi.org/${p.doi}`;
+  const hasOriginalVisuals=entries.some(entry=>entry.kind!=='narrative');
+  return `<section class="cme-block cme-visuals" id="cme-figures-${e(p.id)}">
+   <h4>原文圖表考點</h4>
+   <p class="cme-visual-intro">${hasOriginalVisuals?'展開項目，依原文標號與 PDF 頁碼複習。':'這篇回顧的指定全文沒有正式圖表。以下依內文段落整理。'}</p>
+   ${p.visualScope?`<p class="cme-visual-intro">${e(p.visualScope)}</p>`:''}
+   ${entries.map((entry,index)=>`<details class="cme-visual-item" id="cme-visual-${e(p.id)}-${index+1}" data-kind="${e(entry.kind||'visual')}">
+    <summary><span class="cme-visual-label">${e(entry.label)}</span><span class="cme-visual-title">${e(entry.title)}</span><span class="cme-visual-page">${e(/^PDF|^補充/i.test(entry.page)?entry.page:`PDF ${entry.page}`)}</span></summary>
+    <div class="cme-visual-copy"><h5>怎麼讀</h5>${paragraph(entry.read)}<h5>可能考法</h5>${paragraph(entry.takeaway)}<h5>易誤讀處</h5>${paragraph(entry.trap)}
+    <p class="cme-visual-source">${safeLink(entry.url||entry.sourceUrl||source,'原文來源')}</p></div>
+   </details>`).join('')}
+  </section>`;
+ }
+
+ function visualIndex(year,yearNotes){
+  let count=0;
+  const links=yearNotes.map(note=>{
+   const entries=visuals[note.id]||[];
+   if(!entries.length)return '';
+   const originalCount=entries.filter(entry=>entry.kind!=='narrative').length;
+   count+=originalCount;
+   const label=originalCount?`${originalCount} 項圖表／重點框`:'內文整理';
+   return `<a href="#cme-figures-${e(note.id)}"><span>${e(note.id)} · ${label}</span>${e(note.title||paperMap.get(note.id).title)}</a>`;
+  }).join('');
+  if(!links)return '';
+  return `<section class="cme-index cme-visual-index" id="cme-figure-index-${year}" aria-label="圖表考點索引">
+   <h3>圖表考點索引</h3><p>本年度 ${count} 項原文圖表與重點框，可直接跳到各篇。</p>
+   <div class="cme-session-links">${links}</div>
+  </section>`;
+ }
 
  function readingTable(t,index,paperId){
   const titleId=`table-${paperId}-${index+1}`;
@@ -27,7 +62,9 @@
    <div class="cme-paper-top"><span class="cme-kind">${e(accessLabel)}</span><a class="cme-top-link" href="#cme-index-${p.year}">回導讀索引 ↑</a></div>
    <h3>${e(d.title||p.title)}</h3><p class="cme-original" lang="en">${e(p.original)}</p><p class="cme-citation">${e(p.citation)} · DOI: ${e(p.doi)}</p>
    <div class="cme-read-status"><p>${e(d.fulltextStatus)}</p></div>
+   ${visuals[p.id]?.length?`<a class="cme-visual-jump" href="#cme-figures-${e(p.id)}">直達圖表考點 ↓</a>`:''}
    <section class="cme-takeaway"><h4>本篇核心結論</h4>${paragraph(d.synthesis)}</section>
+   ${visualSection(p)}
    ${section('研究問題與設計',d.researchQuestion)}${section('研究對象／文獻範圍',d.design||p.design)}
    <section class="cme-block cme-deep-findings"><h4>重要發現與較一致的特徵</h4>${d.keyFindings.map((x,i)=>`<div class="cme-finding"><h5><span>${i+1}</span>${e(x.heading)}</h5>${paragraph(x.text)}</div>`).join('')}</section>
    <section class="cme-block cme-hypotheses"><h4>文章支持、未支持與尚待驗證的假說</h4>${d.hypotheses.map(x=>`<div class="cme-hypothesis"><h5>${e(x.claim)}</h5><p><strong>原文證據：</strong>${e(x.result)}</p><p><strong>能下的結論：</strong>${e(x.meaning)}</p></div>`).join('')}</section>
@@ -82,10 +119,11 @@
    <div class="cme-scope"><p>${e(c.sourceNote)}</p><p>本區整理原文及複習推論，不代稱講者投影片或課堂原話。CME未另建立對應考古題；原有題庫題數維持不變。</p></div>
    ${yearNotes.length?`<section class="cme-reading-summary"><h3>原始文獻深讀</h3><p>${fullCount}篇已取得並閱讀全文 · ${tableCount}張重點對照表。依研究發現、假說支持程度與回顧一致特徵整理。</p>${yearNotes.filter(p=>p.access!=='full').map(p=>`<p class="cme-access-gap"><strong>${e(paperMap.get(p.id).original)}</strong>：${p.access==='abstract'?'全文與原表尚未取得；本篇僅能依原始摘要核實。':'僅取得部分原文；閱讀範圍於該篇註明。'}</p>`).join('')}</section>`:''}
    <section class="cme-index" id="cme-index-${c.year}" aria-label="文獻導讀索引"><h3>六個時段，逐篇閱讀</h3><div class="cme-session-links">${c.sessions.map(s=>`<a href="#cme-session-${c.year}-${s.n}"><span>${s.n} · ${e(s.time)}</span>${e(s.title)}<small>${s.papers.length}篇文獻</small></a>`).join('')}</div></section>
+   ${visualIndex(c.year,yearNotes)}
    <section class="cme-foundations"><h3>先把這些概念讀懂</h3><p class="cme-foundation-source">以下為閱讀所需的基本概念，延續指定教材與既有章節的整理。</p><div class="cme-foundation-grid">${c.foundations.map(([title,text])=>`<div class="content-card"><h4>${e(title)}</h4>${paragraph(text)}</div>`).join('')}</div></section>
    ${c.sessions.map(s=>`<section class="cme-session" id="cme-session-${c.year}-${s.n}"><div class="section-head"><div><div class="eyebrow">${e(s.time)} · 文獻導讀 ${s.n}</div><h2>${e(s.title)}</h2></div><span class="cme-session-count">${s.papers.length}篇</span></div>${s.papers.map(id=>renderPaper(paperMap.get(id))).join('')}</section>`).join('')}
    <section class="content-card cme-related"><h3>延伸基本知識</h3><p>回到既有章節釐清名詞、評估與疾病表型。</p><div class="cme-related-links">${c.connections.filter(id=>window.STUDY_TOPICS.some(t=>t.id===id)).map(id=>`<button class="secondary" onclick="openTopic('${id}')">${e(window.STUDY_TOPICS.find(t=>t.id===id).title)} →</button>`).join('')}</div></section>
-   <p class="cme-programme">課程對應：${e(c.programme)}。原始課程另列的11:45與15:45個案報告時段均未收錄。${notes.length?'<a href="cme-deep-source-audit-20261101.md" target="_blank" rel="noopener">逐篇閱讀與表格來源核對清單 ↗</a>':''}</p>
+   <p class="cme-programme">課程對應：${e(c.programme)}。原始課程另列的11:45與15:45個案報告時段均未收錄。${notes.length?'<a href="cme-deep-source-audit-20261104.md" target="_blank" rel="noopener">逐篇閱讀與圖表來源核對清單 ↗</a>':''}</p>
   </div>`;
   window.scrollTo({top:0,behavior:'instant'});
  };

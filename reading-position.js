@@ -41,13 +41,15 @@
  }
  function anchorAtViewport(){
   const candidates=[...view.querySelectorAll(TEXT)].filter(el=>{
+   if(el.closest('details.cme-visual-item:not([open])'))return false;
    const r=el.getBoundingClientRect();return normalize(el.textContent)&&r.width>0&&r.height>0&&r.bottom>16&&r.top<innerHeight&&r.right>0&&r.left<innerWidth;
   });
   const el=candidates.find(el=>el.getBoundingClientRect().top<=16)||candidates[0];
   if(!el)return null;
   const text=normalize(el.textContent),scope=scopeFor(el),scroll=el.closest('.cme-table-scroll');
   return {tag:el.tagName,hash:hash(text),quote:text.slice(0,180),scope,offset:el.getBoundingClientRect().top,
-   tableId:scroll?.closest('figure')?.id||null,tableLeft:scroll?.scrollLeft||0};
+   tableId:scroll?.closest('figure')?.id||null,tableLeft:scroll?.scrollLeft||0,
+   visualId:el.closest('details.cme-visual-item')?.id||null};
  }
  function snapshot(){
   const mode=currentView,topic=activeTopic;
@@ -79,7 +81,8 @@
  }
  function findAnchor(anchor){
   if(!anchor?.quote)return null;
-  const candidates=[...findScope(anchor).querySelectorAll(TEXT)];
+  const scope=(anchor.visualId&&document.getElementById(anchor.visualId))||findScope(anchor);
+  const candidates=[...scope.querySelectorAll(TEXT)];
   return candidates.find(el=>el.tagName===anchor.tag&&hash(normalize(el.textContent))===anchor.hash)
    ||candidates.find(el=>el.tagName===anchor.tag&&normalize(el.textContent).startsWith(anchor.quote))||null;
  }
@@ -108,6 +111,8 @@
    await frame();await frame();
    if(ticket!==restoreId)return;
    const anchor=findAnchor(record.anchor);
+   const visualItem=anchor?.closest('details.cme-visual-item');
+   if(visualItem)visualItem.open=true;
    if(record.anchor?.tableId){const table=document.getElementById(record.anchor.tableId)?.querySelector('.cme-table-scroll');if(table)table.scrollLeft=Math.max(0,record.anchor.tableLeft||0);}
    const target=anchor?scrollY+anchor.getBoundingClientRect().top-Math.min(innerHeight-30,Number(record.anchor.offset)||16):record.scrollY;
    window.scrollTo({top:Math.max(0,target),behavior:'instant'});
