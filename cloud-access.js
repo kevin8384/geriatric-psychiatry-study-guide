@@ -1,7 +1,7 @@
 /* The public reader transfers marks only after the user opens their private reader. */
 (() => {
  'use strict';
- const CLOUD='https://geriatric-study-cloud.buffitem2.chatgpt.site';
+ const CLOUD='https://geriatric-study-cloud.kevin8384.chatgpt.site';
  const button=document.createElement('button');button.className='pill-button sync-launcher';button.type='button';button.textContent='跨裝置同步';button.setAttribute('aria-controls','sync-panel');button.setAttribute('aria-expanded','false');
  document.querySelector('.top-actions')?.append(button);
  const panel=document.createElement('section');panel.id='sync-panel';panel.className='sync-panel';panel.hidden=true;panel.setAttribute('aria-label','跨裝置同步');
