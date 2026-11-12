@@ -440,7 +440,7 @@ window.NEWS115_QUESTIONS=[
     "tag": "delirium",
     "code": "OBS",
     "answer": "2",
-    "text": "有關譫妄症的診斷與評估，下列組合何者最為正確？ \nA. 依照 DSM-5 診斷指引，必須同時包含有注意力(attention)與覺察能力\n(awareness)的減損。 \nB. 若使用混亂評估量表(Confusion Assessment Method)進行篩檢，當個案\n符合 特徵 1.病程急性發作且波動 與 特徵 2.注意力不集中，即可視為篩\n檢陽性。  \nC. 腦波檢查對此診斷有很好的敏感性與特異性。 \nD. 在老年患者中，低活動型(hyperactive)譫妄是較為常見的類型，且與較\n差的預後相關。 \nE. 應常規對懷疑譫妄的個案安排神經影像學檢查。 \n1. A+B \n2. A+D \n3. B+E \n4. C+D \n5. C+E",
+    "text": "有關譫妄症的診斷與評估，下列組合何者最為正確？ \nA. 依照 DSM-5 診斷指引，必須同時包含有注意力(attention)與覺察能力\n(awareness)的減損。 \nB. 若使用混亂評估量表(Confusion Assessment Method)進行篩檢，當個案\n符合 特徵 1.病程急性發作且波動 與 特徵 2.注意力不集中，即可視為篩\n檢陽性。  \nC. 腦波檢查對此診斷有很好的敏感性與特異性。 \nD. 在老年患者中，低活動型(hypo-active)譫妄是較為常見的類型，且與較\n差的預後相關。 \nE. 應常規對懷疑譫妄的個案安排神經影像學檢查。 \n1. A+B \n2. A+D \n3. B+E \n4. C+D \n5. C+E",
     "stem": "有關譫妄症的診斷與評估，下列組合何者最為正確？",
     "options": [
       {
@@ -479,7 +479,7 @@ window.NEWS115_QUESTIONS=[
       },
       {
         "letter": "D",
-        "text": "在老年患者中，低活動型(hyperactive)譫妄是較為常見的類型，且與較 差的預後相關。"
+        "text": "在老年患者中，低活動型(hypo-active)譫妄是較為常見的類型，且與較 差的預後相關。"
       },
       {
         "letter": "E",
@@ -1515,7 +1515,7 @@ window.NEWS115_QUESTIONS=[
     "tag": "substance",
     "code": "SUB",
     "answer": "1",
-    "text": "關於老年人酒精使用,下列組合何者最為正確? \nA. 考慮年齡生理因素,老人族群的酒精使用指引較一般成人嚴格,亦即限制\n老人飲酒量。 \nB.禁酒者(abstainers)指的是過去一年裡每週飲酒量少於 2個標準單位者。 \nC. 低風險、社交性、或適量飲酒者(low-risk, social or moderate drinkers)指\n的是過去一年裡每週的飲酒量少於 7個標準單位、或每次飲酒量少於 3個\n標準單位,且未曾出現飲酒相關問題者。 \nD. 酒精使用疾患(alcohol use disorder)指的是飲酒行為模式已造成身體、心\n理、社會上的不良後果,不單只看飲酒量或頻率。 \nE.過去研究顯示,老年族群裡約 40-70%為禁酒者,隨著年齡增加,禁酒者的比\n例減少。 \n選項： \n1. A+B+C+D \n2. A+B+C+E \n3. A+B+D+E \n4. A+C+D+E \n5. B+C+D+E",
+    "text": "關於老年人酒精使用,下列組合何者最為正確? \nA. 考慮年齡生理因素,老人族群的酒精使用指引較一般成人嚴格,亦即限制\n老人飲酒量。 \nB.禁酒者(abstainers)指的是過去一年裡飲酒量少於 2個標準單位者。 \nC. 低風險、社交性、或適量飲酒者(low-risk, social or moderate drinkers)指\n的是過去一年裡每週的飲酒量少於 7個標準單位、或每次飲酒量少於 3個\n標準單位,且未曾出現飲酒相關問題者。 \nD. 酒精使用疾患(alcohol use disorder)指的是飲酒行為模式已造成身體、心\n理、社會上的不良後果,不單只看飲酒量或頻率。 \nE.過去研究顯示,老年族群裡約 40-70%為禁酒者,隨著年齡增加,禁酒者的比\n例減少。 \n選項： \n1. A+B+C+D \n2. A+B+C+E \n3. A+B+D+E \n4. A+C+D+E \n5. B+C+D+E",
     "stem": "關於老年人酒精使用,下列組合何者最為正確?",
     "options": [
       {
@@ -1546,7 +1546,7 @@ window.NEWS115_QUESTIONS=[
       },
       {
         "letter": "B",
-        "text": "禁酒者(abstainers)指的是過去一年裡每週飲酒量少於 2個標準單位者。"
+        "text": "禁酒者(abstainers)指的是過去一年裡飲酒量少於 2個標準單位者。"
       },
       {
         "letter": "C",
